@@ -58,12 +58,12 @@
 </div>
 <div class="grid">
     <div class="col mt-2">
-        <p-table [value]="heroes" responsiveLayout="scroll">
+        <p-table [value]="heroes | slice:0" responsiveLayout="scroll">
             <ng-template pTemplate="header">
                 <tr>
-                    <th>Nombre</th>
-                    <th>Vuela</th>
-                    <th>Color</th>
+                    <th pSortableColumn="nombre">Nombre <p-sortIcon field="nombre"></p-sortIcon></th>
+                    <th pSortableColumn="vuela">Vuela <p-sortIcon field="vuela"></p-sortIcon></th>
+                    <th pSortableColumn="color">Color <p-sortIcon field="color"></p-sortIcon></th>
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-heroe>
